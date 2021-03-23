@@ -11,6 +11,8 @@ export class ProductItemComponent implements OnInit {
   public product: Product;
   public product2: Product;
   public product3: Product;
+
+  public quantities: Array<number>;
   constructor() { }
 
   ngOnInit(): void {
@@ -35,9 +37,14 @@ export class ProductItemComponent implements OnInit {
       quantity: 0,
       imageUrl: "https://www.winwin.rs/media/catalog/product/420x420/865/47/8654761.jpg"
     }
+
+    this.quantities = [];
+    for (let i = 1; i <= 20; i++) {
+      this.quantities.push(i);
+    }
   }
 
-  
+
   incrementInCart() {
     this.product.quantity++;
   }
