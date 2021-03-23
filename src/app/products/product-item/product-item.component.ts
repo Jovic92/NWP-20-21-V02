@@ -12,6 +12,8 @@ export class ProductItemComponent implements OnInit {
   public product2: Product;
   public product3: Product;
 
+  public chosenModel: number;
+
   public quantities: Array<number>;
   constructor() { }
 
@@ -54,5 +56,13 @@ export class ProductItemComponent implements OnInit {
     if (this.product.quantity > 0) {
       this.product.quantity--;
     }
+  }
+
+  setQuantity(value: number){
+    this.product.quantity = value;
+  }
+
+  setQuantity2(){
+    this.product.quantity = this.chosenModel;
   }
 }
