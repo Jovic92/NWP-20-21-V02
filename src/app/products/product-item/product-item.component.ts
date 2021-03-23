@@ -56,43 +56,48 @@ export class ProductItemComponent implements OnInit {
       price: 25000,
       isOnSale: true,
       quantity: 0,
-      imageUrl: "https://img.gigatron.rs/img/products/large/image5b854e7ad91cf.png"
+      imageUrl: "https://img.gigatron.rs/img/products/large/image5b854e7ad91cf.png",
+      tempQuant: 0
     })
     this.products.push({
       name: "Monitor ViewSonic",
       price: 15000,
       isOnSale: false,
       quantity: 0,
-      imageUrl: "https://www.winwin.rs/media/catalog/product/420x420/860/94/8609418.jpg"
+      imageUrl: "https://www.winwin.rs/media/catalog/product/420x420/860/94/8609418.jpg",
+      tempQuant: 0
+
     })
     this.products.push({
       name: "Benq",
       price: 27000,
       isOnSale: true,
       quantity: 0,
-      imageUrl: "https://www.winwin.rs/media/catalog/product/420x420/865/47/8654761.jpg"
+      imageUrl: "https://www.winwin.rs/media/catalog/product/420x420/865/47/8654761.jpg",
+      tempQuant: 0
+
     })
 
-    alert(this.products.length)
+    // alert(this.products.length)
   }
 
 
-  incrementInCart() {
-    this.product.quantity++;
+  incrementInCart(i:number) {
+    this.products[i].quantity++;
   }
 
 
-  decrementInCart() {
-    if (this.product.quantity > 0) {
-      this.product.quantity--;
+  decrementInCart(i:number) {
+    if (this.products[i].quantity > 0) {
+      this.products[i].quantity--;
     }
   }
 
-  setQuantity(value: number) {
-    this.product.quantity = value;
+  setQuantity(value: number, i:number) {
+    this.products[i].quantity = value;
   }
 
-  setQuantity2() {
-    this.product.quantity = this.chosenModel;
+  setQuantity2(i:number) {
+    this.products[i].quantity = this.products[i].tempQuant;
   }
 }

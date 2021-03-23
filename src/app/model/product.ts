@@ -4,4 +4,5 @@ export interface Product{
     price: number;
     isOnSale: boolean;
     quantity: number;
+    tempQuant: number;
 }
